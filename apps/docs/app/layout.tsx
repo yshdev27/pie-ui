@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { DocsSidebar, DocsTopNav } from "./_components/docs-nav";
+import { DocsTopNav } from "./_components/docs-nav";
+import { DocsShell } from "./_components/docs-shell";
 import "@pieui/tokens/theme.css";
 import "@pieui/react/styles.css";
 import "./globals.css";
@@ -33,13 +34,7 @@ export default function RootLayout({
           </div>
         </header>
 
-        <div className="docs-shell">
-          <aside className="sidebar">
-            <DocsSidebar />
-          </aside>
-
-          <main className="docs-main">{children}</main>
-        </div>
+        <DocsShell>{children}</DocsShell>
       </body>
     </html>
   );
