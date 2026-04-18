@@ -39,5 +39,11 @@
   },
   "dependencies": {
     "@pieui/tokens": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
   }
 }
