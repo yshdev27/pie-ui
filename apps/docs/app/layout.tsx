@@ -7,8 +7,8 @@ import "@pieui/react/styles.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Pie UI Docs",
-  description: "Apple-style documentation website for Pie UI.",
+  title: "PieUI",
+  description: "Documentation website for Pie UI.",
 };
 
 export default function RootLayout({
