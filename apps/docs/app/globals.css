@@ -92,9 +92,24 @@ a {
 
 .brand {
   text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  background: linear-gradient(
+    92deg,
+    var(--text-0) 0%,
+    var(--accent-blue) 55%,
+    var(--accent-orange) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.brand:hover {
+  transform: translateY(-1px);
+  filter: saturate(1.2);
 }
 
 .topnav {
