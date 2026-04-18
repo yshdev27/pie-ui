@@ -1,0 +1,35 @@
+{
+  "name": "@pieui/tokens",
+  "version": "0.2.0",
+  "description": "Design tokens and theme.css for Pie UI \u2014 CSS custom properties and a typed token object.",
+  "keywords": [
+    "design-tokens",
+    "css-variables",
+    "theme",
+    "design-system"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/theme.css"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./theme.css": "./src/theme.css",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  }
+}

@@ -1,0 +1,118 @@
+:root {
+  /* ---------- Colors ---------- */
+  --pie-bg-primary: #ffffff;
+  --pie-bg-secondary: #f6f6f8;
+  --pie-bg-tertiary: #ededf1;
+
+  --pie-text-primary: #111113;
+  --pie-text-secondary: #6e6e73;
+  --pie-text-tertiary: #8e8e93;
+  --pie-text-on-accent: #ffffff;
+
+  --pie-line: #e4e4e9;
+  --pie-line-strong: #d1d1d6;
+  --pie-border-secondary: #b8b8b8;
+
+  --pie-accent: #0066cc;
+  --pie-accent-hover: #0057b0;
+  --pie-accent-pressed: #004a95;
+  --pie-accent-weak: #ededf1;
+
+  --pie-success: #34c759;
+  --pie-warning: #ff9f0a;
+  --pie-danger: #ff3b30;
+  --pie-danger-weak: #fff1f0;
+
+  --pie-focus: #0066cc;
+
+  /* ---------- Typography ---------- */
+  --pie-font-sans: "Inter", "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  --pie-font-heading: "Inter", "SF Pro Display", "Segoe UI", system-ui,
+    sans-serif;
+  --pie-font-mono: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, Consolas,
+    monospace;
+
+  --pie-text-xs: 0.75rem;
+  --pie-text-sm: 0.875rem;
+  --pie-text-base: 1rem;
+  --pie-text-lg: 1.125rem;
+  --pie-text-xl: 1.25rem;
+
+  /* ---------- Radius ---------- */
+  --pie-radius-sm: 10px;
+  --pie-radius-md: 14px;
+  --pie-radius-smooth: 16px;
+  --pie-radius-lg: 20px;
+  --pie-radius-xl: 28px;
+  --pie-radius-full: 999px;
+
+  /* ---------- Spacing ---------- */
+  --pie-space-1: 4px;
+  --pie-space-2: 8px;
+  --pie-space-3: 12px;
+  --pie-space-4: 16px;
+  --pie-space-5: 20px;
+  --pie-space-6: 24px;
+  --pie-space-8: 32px;
+  --pie-space-10: 40px;
+  --pie-space-12: 48px;
+
+  /* ---------- Shadows ---------- */
+  --pie-shadow-min: 0 1px 4px 0 rgba(0, 0, 0, 0.04),
+    0 4px 12px 0 rgba(0, 0, 0, 0.06);
+  --pie-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04),
+    0 8px 24px rgba(0, 0, 0, 0.04);
+  --pie-shadow-md: 0 2px 6px rgba(0, 0, 0, 0.06),
+    0 24px 48px rgba(0, 0, 0, 0.08);
+  --pie-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.08),
+    0 32px 64px rgba(0, 0, 0, 0.12);
+
+  /* ---------- Motion ---------- */
+  --pie-motion-fast: 120ms;
+  --pie-motion-medium: 200ms;
+  --pie-motion-slow: 320ms;
+  --pie-ease-default: cubic-bezier(0.2, 0, 0, 1);
+  --pie-ease-emphasized: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+[data-pie-theme="dark"] {
+  --pie-bg-primary: #1c1c1e;
+  --pie-bg-secondary: #2c2c2e;
+  --pie-bg-tertiary: #3a3a3c;
+
+  --pie-text-primary: #f5f5f7;
+  --pie-text-secondary: #aeaeb2;
+  --pie-text-tertiary: #8e8e93;
+  --pie-text-on-accent: #ffffff;
+
+  --pie-line: #38383a;
+  --pie-line-strong: #48484a;
+  --pie-border-secondary: #5a5a5e;
+
+  --pie-accent: #0a84ff;
+  --pie-accent-hover: #409cff;
+  --pie-accent-pressed: #006edc;
+  --pie-accent-weak: #2c2c2e;
+
+  --pie-success: #30d158;
+  --pie-warning: #ff9f0a;
+  --pie-danger: #ff453a;
+  --pie-danger-weak: #3a1c1c;
+
+  --pie-focus: #0a84ff;
+
+  --pie-shadow-min: 0 1px 4px 0 rgba(0, 0, 0, 0.3),
+    0 4px 12px 0 rgba(0, 0, 0, 0.4);
+  --pie-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3),
+    0 8px 24px rgba(0, 0, 0, 0.3);
+  --pie-shadow-md: 0 2px 6px rgba(0, 0, 0, 0.4),
+    0 24px 48px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --pie-motion-fast: 0ms;
+    --pie-motion-medium: 0ms;
+    --pie-motion-slow: 0ms;
+  }
+}

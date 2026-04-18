@@ -1,0 +1,20 @@
+{
+  "name": "pie-ui-docs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "node -e \"require('fs').rmSync('.next', { recursive: true, force: true })\""
+  },
+  "dependencies": {
+    "@pieui/react": "*",
+    "@pieui/tokens": "*",
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
