@@ -1,20 +1,21 @@
 # Pie UI
 
-Pie UI is an expressive, accessible React component library powered by design tokens. Apple-inspired surfaces, token-driven styling, and keyboard-first interactions — built for React 19.
+Expressive React component library powered by design tokens. TypeScript-first, accessible by default.
 
 ## Packages
 
-| Package            | Description                                                 |
-| ------------------ | ----------------------------------------------------------- |
-| `@pieui/react`    | React component library (Button, Menu, Toggle, …)           |
-| `@pieui/tokens`   | CSS variables (`theme.css`) and a typed token object        |
-| `@pieui/cli`      | Upcoming scaffolding CLI (`init`, `add`)                    |
+| Package | Version | Purpose |
+| --- | --- | --- |
+| [`@pieui/react`](./packages/pie-ui) | [![npm](https://img.shields.io/npm/v/@pieui/react.svg)](https://www.npmjs.com/package/@pieui/react) | Components |
+| [`@pieui/tokens`](./packages/tokens) | [![npm](https://img.shields.io/npm/v/@pieui/tokens.svg)](https://www.npmjs.com/package/@pieui/tokens) | Design tokens + `theme.css` |
 
-## Quick start
+## Install
 
 ```bash
 npm install @pieui/react @pieui/tokens
 ```
+
+## Use
 
 Import both stylesheets once at the root of your app:
 
@@ -23,41 +24,32 @@ import "@pieui/tokens/theme.css";
 import "@pieui/react/styles.css";
 ```
 
-Render a component:
+Then render:
 
 ```tsx
-import { Button, Toggle } from "@pieui/react";
+import { Button, TextArea } from "@pieui/react";
 
-export default function Example() {
+export default function App() {
   return (
-    <div style={{ display: "flex", gap: 12 }}>
+    <>
       <Button variant="primary">Continue</Button>
-      <Toggle defaultChecked aria-label="Enable sync" />
-    </div>
+      <TextArea placeholder="Type Here" />
+    </>
   );
 }
 ```
 
 ## Components
 
-- `Button` — primary, secondary, tinted, ghost, destructive, with sm/md/lg sizes and loading state
-- `Toggle` — controlled/uncontrolled switch with `role="switch"`
-- `Checkbox` — binary selection with `indeterminate` state
-- `Stepper` — bounded numeric input with arrow keys and hold-to-repeat
-- `Menu`, `MenuItem`, `MenuSeparator` — 360px vertical menu matching the Pie UI spec
-- `PullDownButton` — trigger + menu with outside-click and Escape handling
-- `Toolbar`, `ToolbarButton`, `ToolbarSeparator` — roving-focus toolbar
-- `TextArea` — multi-line text input with 16px Smooth radius, invalid state, and optional autoGrow
+`Button` · `Toggle` · `Checkbox` · `Stepper` · `Menu` · `PullDownButton` · `Toolbar` · `TextArea`
 
 ## Theming
-
-Switch themes with a single attribute:
 
 ```html
 <html data-pie-theme="dark">
 ```
 
-Override individual tokens:
+Override any token as a CSS custom property:
 
 ```css
 :root {
@@ -70,29 +62,17 @@ Override individual tokens:
 
 ```bash
 npm install
-npm run dev           # runs the docs site at http://localhost:3000
+npm run dev           # docs site at http://localhost:3000
 npm run build         # builds every workspace
-npm run typecheck     # typechecks every workspace
+npm run typecheck
 ```
 
 ## Monorepo layout
 
-- `apps/docs` — Next.js documentation website, also the first real consumer of `@pieui/react`
-- `packages/pie-ui` — the React component library (source + `styles.css`)
-- `packages/tokens` — design tokens and `theme.css`
-- `packages/cli` — the `pie-ui` CLI (planned)
+- `apps/docs` — Next.js documentation site, also the first real consumer
+- `packages/pie-ui` — `@pieui/react` source
+- `packages/tokens` — `@pieui/tokens` source
 
-## Release notes
+## License
 
-### v0.2.0 — 2026-04-18
-
-- `TextArea` component with controlled/uncontrolled value, invalid and disabled states, and an optional `autoGrow` mode
-- New tokens: `--pie-radius-smooth` (16px) and `--pie-border-secondary`
-- Docs page for Text area with variants, anatomy, and API reference
-
-### v0.1.0 — 2026-04-17
-
-- Seven fully implemented components with accessible defaults
-- Token stylesheet with light + dark themes
-- Docs site with foundations, component API reference, and usage guidelines
-- Production-ready SSR: the docs site statically prerenders every component page
+MIT

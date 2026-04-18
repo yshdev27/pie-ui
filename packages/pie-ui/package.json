@@ -1,7 +1,7 @@
 {
   "name": "@pieui/react",
-  "version": "0.2.0",
-  "description": "Expressive, accessible React components powered by design tokens. Apple-inspired surfaces.",
+  "version": "0.2.1",
+  "description": "Expressive, accessible React components powered by design tokens.",
   "keywords": [
     "react",
     "component-library",

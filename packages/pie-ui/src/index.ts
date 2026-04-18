@@ -30,4 +30,4 @@ export type { ToolbarProps, ToolbarButtonProps } from "./components/toolbar";
 export { TextArea } from "./components/text-area";
 export type { TextAreaProps } from "./components/text-area";
 
-export const pieUiVersion = "0.2.0";
+export const pieUiVersion = "0.2.1";

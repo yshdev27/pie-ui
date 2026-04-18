@@ -271,7 +271,7 @@ export default function FoundationsPage() {
       <section className="section">
         <div className="section-heading">
           <h2>Radius</h2>
-          <p>Soft, consistent corners that match Apple-inspired surfaces.</p>
+          <p>Soft, consistent corners that keep every surface feeling calm.</p>
         </div>
         <article className="doc-card">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-2">
