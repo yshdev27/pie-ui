@@ -2,5 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "installCommand": "cd ../.. && npm install --include=dev",
-  "buildCommand": "cd ../.. && npm run build:packages && cd apps/docs && next build"
+  "buildCommand": "cd ../.. && npm run build:packages && npm run build -w pie-ui-docs"
 }
