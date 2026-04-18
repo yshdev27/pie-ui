@@ -8,7 +8,9 @@
   ],
   "scripts": {
     "dev": "npm run dev -w apps/docs",
-    "build": "npm run build --workspaces --if-present",
+    "build": "npm run build -w @pieui/tokens && npm run build -w @pieui/react && npm run build -w pie-ui-docs",
+    "build:packages": "npm run build -w @pieui/tokens && npm run build -w @pieui/react",
+    "vercel-build": "npm run build -w @pieui/tokens && npm run build -w @pieui/react && npm run build -w pie-ui-docs",
     "lint": "npm run lint --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "test": "npm run test --workspaces --if-present"
