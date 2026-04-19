@@ -12,100 +12,43 @@ const entries: Entry[] = [
   {
     version: "v0.3.0",
     date: "2026-04-19",
-    title: "Checkbox, Stepper, and Dropdown go stable",
-    summary:
-      "Three selection-and-input components graduate to stable. Pull-down button is renamed to Dropdown with a 204×56 select-style trigger, and the docs shell gets a bolder Pie UI wordmark.",
+    title: "Checkbox, Stepper, and Dropdown are ready",
+    summary: "Three more components are stable and ready to use.",
     changes: [
-      {
-        type: "Changed",
-        description:
-          "Breaking: renamed PullDownButton to Dropdown (also PullDownItem, PullDownPlacement, .pie-pull-down* CSS classes, /components/pull-down-button route).",
-      },
-      {
-        type: "Changed",
-        description:
-          "Dropdown ships a 204×56 select-style trigger with 16px Smooth radius, 1px borderSecondary, and a rotating chevron.",
-      },
-      {
-        type: "Changed",
-        description:
-          "Checkbox now renders an inline 20×20 SVG check (and a visual indeterminate bar) instead of CSS pseudo-elements.",
-      },
-      {
-        type: "Changed",
-        description:
-          "Stepper container is 107px wide with outlined circular − / + buttons around the value.",
-      },
-      {
-        type: "Changed",
-        description:
-          "Promoted Checkbox, Stepper, and Dropdown to Stable on the components index.",
-      },
-      {
-        type: "Changed",
-        description:
-          "Docs: bolder, larger Pie UI wordmark in the topbar for stronger brand presence.",
-      },
+      { type: "Added", description: "New Dropdown component for picking from a list." },
+      { type: "Changed", description: "Checkbox, Stepper, and Dropdown are now marked stable." },
+      { type: "Changed", description: "Refreshed visuals for Checkbox and Stepper." },
+      { type: "Changed", description: "Pull-down button is now called Dropdown." },
     ],
   },
   {
     version: "v0.2.0",
     date: "2026-04-18",
-    title: "Text area lands",
-    summary:
-      "The first text-entry primitive, shipped with a 16px Smooth radius token and a dedicated border-secondary color for input surfaces.",
+    title: "Text area added",
+    summary: "A simple multi-line text input, ready out of the box.",
     changes: [
-      {
-        type: "Added",
-        description:
-          "TextArea component with controlled/uncontrolled value, invalid, disabled, and autoGrow.",
-      },
-      {
-        type: "Added",
-        description:
-          "--pie-radius-smooth (16px) and --pie-border-secondary tokens in @pieui/tokens.",
-      },
-      {
-        type: "Added",
-        description:
-          "/components/textarea documentation page with variants, anatomy, and API reference.",
-      },
+      { type: "Added", description: "Text area component." },
     ],
   },
   {
     version: "v0.1.0",
     date: "2026-04-17",
-    title: "First public release",
-    summary:
-      "The first public cut of Pie UI with foundations, component pages, and a working install path.",
+    title: "First release",
+    summary: "The first version of Pie UI.",
     changes: [
-      { type: "Added", description: "Hero, getting started, and foundations pages." },
-      {
-        type: "Added",
-        description:
-          "Component pages for Button, Menu, Dropdown, Toolbar, Checkbox, Stepper, Toggle.",
-      },
-      {
-        type: "Added",
-        description:
-          "Install snippet with npm, pnpm, yarn and bun tabs, plus a copy button.",
-      },
-      {
-        type: "Added",
-        description: "@pieui/tokens with theme.css and typed token object.",
-      },
+      { type: "Added", description: "Button, Toggle, Checkbox, Stepper, Menu, Dropdown, Toolbar." },
+      { type: "Added", description: "Docs site with install guide and component pages." },
     ],
   },
   {
     version: "v0.4.0",
     date: "Planned",
-    title: "Overlays and navigation",
-    summary:
-      "Layered surfaces with focus management plus segmented navigation.",
+    title: "Coming next",
+    summary: "What we're working on for the next release.",
     changes: [
-      { type: "Planned", description: "Dialog with focus trap and scroll lock." },
-      { type: "Planned", description: "Tabs with segmented visual and keyboard roving." },
-      { type: "Planned", description: "Tooltip with collision-aware placement." },
+      { type: "Planned", description: "Dialog." },
+      { type: "Planned", description: "Tabs." },
+      { type: "Planned", description: "Tooltip." },
     ],
   },
 ];

@@ -165,7 +165,7 @@ export default function ComponentsPage() {
       <section className="section">
         <div className="section-heading">
           <h2>More on the way</h2>
-          <p>These components are planned for v0.2 and beyond.</p>
+          <p>These components are planned for v0.4 and beyond.</p>
         </div>
         <div className="card-grid">
           {[
