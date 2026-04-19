@@ -239,8 +239,9 @@
 .pie-checkbox:checked,
 .pie-checkbox[data-state="checked"],
 .pie-checkbox[data-state="indeterminate"] {
-  background: var(--pie-accent);
-  border-color: var(--pie-accent);
+  background: var(--pie-text-primary);
+  border-color: var(--pie-text-primary);
+  color: var(--pie-text-on-accent);
 }
 
 .pie-checkbox-icon {
