@@ -270,7 +270,7 @@ export default function MenuDocPage() {
         ],
       }}
       related={[
-        { label: "Pull-down button", href: "/components/pull-down-button" },
+        { label: "Dropdown", href: "/components/dropdown" },
         { label: "Toolbar", href: "/components/toolbar" },
         { label: "Button", href: "/components/button" },
       ]}

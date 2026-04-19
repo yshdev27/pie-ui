@@ -3,6 +3,7 @@ import { InstallSnippet } from "./_components/install-snippet";
 import {
   ButtonPreview,
   CheckboxPreview,
+  DropdownPreview,
   MenuPreview,
   StepperPreview,
   TextAreaPreview,
@@ -79,6 +80,12 @@ const showcase = [
     href: "/components/textarea",
     description: "Multi-line text entry with a 16px Smooth radius.",
     render: <TextAreaPreview placeholder="Type Here" />,
+  },
+  {
+    name: "Dropdown",
+    href: "/components/dropdown",
+    description: "Select-style trigger that reveals a list of options.",
+    render: <DropdownPreview />,
   },
 ];
 

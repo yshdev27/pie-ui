@@ -10,6 +10,45 @@ type Entry = {
 
 const entries: Entry[] = [
   {
+    version: "v0.3.0",
+    date: "2026-04-19",
+    title: "Checkbox, Stepper, and Dropdown go stable",
+    summary:
+      "Three selection-and-input components graduate to stable. Pull-down button is renamed to Dropdown with a 204×56 select-style trigger, and the docs shell gets a bolder Pie UI wordmark.",
+    changes: [
+      {
+        type: "Changed",
+        description:
+          "Breaking: renamed PullDownButton to Dropdown (also PullDownItem, PullDownPlacement, .pie-pull-down* CSS classes, /components/pull-down-button route).",
+      },
+      {
+        type: "Changed",
+        description:
+          "Dropdown ships a 204×56 select-style trigger with 16px Smooth radius, 1px borderSecondary, and a rotating chevron.",
+      },
+      {
+        type: "Changed",
+        description:
+          "Checkbox now renders an inline 20×20 SVG check (and a visual indeterminate bar) instead of CSS pseudo-elements.",
+      },
+      {
+        type: "Changed",
+        description:
+          "Stepper container is 107px wide with outlined circular − / + buttons around the value.",
+      },
+      {
+        type: "Changed",
+        description:
+          "Promoted Checkbox, Stepper, and Dropdown to Stable on the components index.",
+      },
+      {
+        type: "Changed",
+        description:
+          "Docs: bolder, larger Pie UI wordmark in the topbar for stronger brand presence.",
+      },
+    ],
+  },
+  {
     version: "v0.2.0",
     date: "2026-04-18",
     title: "Text area lands",
@@ -44,7 +83,7 @@ const entries: Entry[] = [
       {
         type: "Added",
         description:
-          "Component pages for Button, Menu, Pull-down, Toolbar, Checkbox, Stepper, Toggle.",
+          "Component pages for Button, Menu, Dropdown, Toolbar, Checkbox, Stepper, Toggle.",
       },
       {
         type: "Added",
@@ -58,7 +97,7 @@ const entries: Entry[] = [
     ],
   },
   {
-    version: "v0.3.0",
+    version: "v0.4.0",
     date: "Planned",
     title: "Overlays and navigation",
     summary:

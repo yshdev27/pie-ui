@@ -6,7 +6,7 @@ export default function CheckboxDocPage() {
     <ComponentDocTemplate
       title="Checkbox"
       description="Checkboxes let people pick any number of items from a list. Use them when options are independent and a selection isn't required."
-      status="Planned"
+      status="Stable"
       componentName="Checkbox"
       preview={
         <div className="preview-row">

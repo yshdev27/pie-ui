@@ -5,10 +5,10 @@ import {
   Button,
   Checkbox,
   type CheckedState,
+  type DropdownItem,
+  Dropdown,
   Menu,
   MenuItem,
-  type PullDownItem,
-  PullDownButton,
   Stepper,
   TextArea,
   Toggle,
@@ -62,14 +62,6 @@ const LogOutIcon = () => (
     <path d="M14 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8" />
     <path d="M10 12h11" />
     <path d="M17 8l4 4-4 4" />
-  </Icon>
-);
-
-const TrashIcon = () => (
-  <Icon>
-    <path d="M4 7h16" />
-    <path d="M9 7V4h6v3" />
-    <path d="M6 7l1 13h10l1-13" />
   </Icon>
 );
 
@@ -154,14 +146,21 @@ export function MenuPreview({
   );
 }
 
-export function PullDownPreview({ open = false }: { open?: boolean }) {
-  const items: PullDownItem[] = [
-    { label: "Rename" },
-    { label: "Duplicate" },
-    { label: "Move to…" },
-    { label: "Delete", variant: "destructive", icon: <TrashIcon /> },
+export function DropdownPreview({
+  open = false,
+  label = "United States",
+}: {
+  open?: boolean;
+  label?: string;
+}) {
+  const items: DropdownItem[] = [
+    { label: "United States" },
+    { label: "Canada" },
+    { label: "United Kingdom" },
+    { label: "Germany" },
+    { label: "Japan" },
   ];
-  return <PullDownButton label="Actions" items={items} defaultOpen={open} />;
+  return <Dropdown label={label} items={items} defaultOpen={open} />;
 }
 
 export function TextAreaPreview({

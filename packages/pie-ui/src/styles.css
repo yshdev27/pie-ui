@@ -206,6 +206,16 @@
   user-select: none;
 }
 
+.pie-checkbox-control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
 .pie-checkbox {
   appearance: none;
   -webkit-appearance: none;
@@ -214,16 +224,11 @@
   border-radius: 6px;
   border: 1px solid var(--pie-line-strong);
   background: var(--pie-bg-primary);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   margin: 0;
-  position: relative;
   transition:
     background-color var(--pie-motion-fast) var(--pie-ease-default),
     border-color var(--pie-motion-fast) var(--pie-ease-default);
-  flex-shrink: 0;
 }
 
 .pie-checkbox:focus-visible {
@@ -238,21 +243,17 @@
   border-color: var(--pie-accent);
 }
 
-.pie-checkbox[data-state="checked"]::after {
-  content: "";
-  width: 10px;
-  height: 6px;
-  border: solid var(--pie-text-on-accent);
-  border-width: 0 0 2px 2px;
-  transform: rotate(-45deg) translate(1px, -1px);
+.pie-checkbox-icon {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--pie-motion-fast) var(--pie-ease-default);
 }
 
-.pie-checkbox[data-state="indeterminate"]::after {
-  content: "";
-  width: 10px;
-  height: 2px;
-  background: var(--pie-text-on-accent);
-  border-radius: 2px;
+.pie-checkbox-control[data-state="checked"] .pie-checkbox-icon,
+.pie-checkbox-control[data-state="indeterminate"] .pie-checkbox-icon {
+  opacity: 1;
 }
 
 .pie-checkbox:disabled {
@@ -263,35 +264,41 @@
 /* =============================== Stepper ============================== */
 
 .pie-stepper {
-  display: inline-flex;
-  align-items: stretch;
-  border: 1px solid var(--pie-line);
-  border-radius: var(--pie-radius-full);
-  background: var(--pie-bg-primary);
+  display: flex;
+  width: 107px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 6px;
   font-family: var(--pie-font-sans);
-  overflow: hidden;
   color: var(--pie-text-primary);
 }
 
 .pie-stepper-button {
-  border: none;
-  background: transparent;
-  width: 36px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--pie-line);
+  background: var(--pie-bg-primary);
   color: inherit;
-  transition: background-color var(--pie-motion-fast) var(--pie-ease-default);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background-color var(--pie-motion-fast) var(--pie-ease-default),
+    border-color var(--pie-motion-fast) var(--pie-ease-default);
 }
 
 .pie-stepper-button:hover:not(:disabled) {
   background: var(--pie-bg-secondary);
+  border-color: var(--pie-line-strong);
 }
 
 .pie-stepper-button:focus-visible {
   outline: 2px solid var(--pie-focus);
-  outline-offset: -2px;
+  outline-offset: 2px;
 }
 
 .pie-stepper-button:disabled {
@@ -303,10 +310,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 40px;
-  padding: 0 12px;
-  border-left: 1px solid var(--pie-line);
-  border-right: 1px solid var(--pie-line);
+  flex: 1;
+  min-width: 0;
   font-size: var(--pie-text-sm);
   font-weight: 500;
   font-variant-numeric: tabular-nums;
@@ -375,20 +380,78 @@
   margin: 6px 0;
 }
 
-/* ========================== Pull-down button ========================== */
+/* =============================== Dropdown ============================= */
 
-.pie-pull-down {
+.pie-dropdown {
   position: relative;
   display: inline-block;
 }
 
-.pie-pull-down-panel {
+.pie-dropdown-trigger {
+  display: flex;
+  width: 204px;
+  height: 56px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 16px;
+  border-radius: var(--pie-radius-smooth);
+  border: 1px solid var(--pie-border-secondary);
+  background: var(--pie-bg-primary);
+  color: var(--pie-text-primary);
+  font-family: var(--pie-font-sans);
+  font-size: var(--pie-text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  box-sizing: border-box;
+  transition:
+    border-color var(--pie-motion-fast) var(--pie-ease-default),
+    box-shadow var(--pie-motion-fast) var(--pie-ease-default);
+}
+
+.pie-dropdown-trigger:hover:not(:disabled) {
+  border-color: var(--pie-line-strong);
+}
+
+.pie-dropdown-trigger:focus-visible {
+  outline: none;
+  border-color: var(--pie-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--pie-focus) 22%, transparent);
+}
+
+.pie-dropdown-trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--pie-bg-secondary);
+}
+
+.pie-dropdown-label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pie-dropdown-chevron {
+  flex-shrink: 0;
+  color: var(--pie-text-secondary);
+  transition: transform var(--pie-motion-medium) var(--pie-ease-emphasized);
+}
+
+.pie-dropdown-trigger[data-open="true"] .pie-dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+.pie-dropdown-panel {
   position: absolute;
   top: calc(100% + 6px);
   left: 0;
   z-index: 40;
-  min-width: 200px;
-  border-radius: var(--pie-radius-md);
+  min-width: 204px;
+  border-radius: var(--pie-radius-smooth);
+  border: 1px solid var(--pie-border-secondary);
   background: var(--pie-bg-primary);
   box-shadow: var(--pie-shadow-min);
   padding: 6px;
@@ -398,19 +461,19 @@
   transform-origin: top left;
 }
 
-.pie-pull-down-panel[data-placement="bottom-end"] {
+.pie-dropdown-panel[data-placement="bottom-end"] {
   left: auto;
   right: 0;
   transform-origin: top right;
 }
 
-.pie-pull-down-panel[data-placement="top-start"] {
+.pie-dropdown-panel[data-placement="top-start"] {
   top: auto;
   bottom: calc(100% + 6px);
   transform-origin: bottom left;
 }
 
-.pie-pull-down-panel[data-placement="top-end"] {
+.pie-dropdown-panel[data-placement="top-end"] {
   top: auto;
   bottom: calc(100% + 6px);
   left: auto;
@@ -429,12 +492,12 @@
   }
 }
 
-.pie-pull-down-item {
+.pie-dropdown-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 10px;
-  border-radius: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
   border: none;
   background: transparent;
   font-family: var(--pie-font-sans);
@@ -446,22 +509,31 @@
   transition: background-color var(--pie-motion-fast) var(--pie-ease-default);
 }
 
-.pie-pull-down-item:hover,
-.pie-pull-down-item[data-highlighted="true"] {
+.pie-dropdown-item:hover,
+.pie-dropdown-item[data-highlighted="true"] {
   background: var(--pie-bg-secondary);
 }
 
-.pie-pull-down-item:focus-visible {
+.pie-dropdown-item:focus-visible {
   outline: 2px solid var(--pie-focus);
   outline-offset: 2px;
 }
 
-.pie-pull-down-item[data-variant="destructive"] {
+.pie-dropdown-item[data-variant="destructive"] {
   color: var(--pie-danger);
 }
 
-.pie-pull-down-item[data-variant="destructive"]:hover {
+.pie-dropdown-item[data-variant="destructive"]:hover {
   background: var(--pie-danger-weak);
+}
+
+.pie-dropdown-item-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 /* =============================== Toolbar ============================== */

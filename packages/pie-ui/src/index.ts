@@ -13,12 +13,12 @@ export type { StepperProps } from "./components/stepper";
 export { Menu, MenuItem, MenuSeparator } from "./components/menu";
 export type { MenuProps, MenuItemProps } from "./components/menu";
 
-export { PullDownButton } from "./components/pull-down-button";
+export { Dropdown } from "./components/dropdown";
 export type {
-  PullDownButtonProps,
-  PullDownItem,
-  PullDownPlacement,
-} from "./components/pull-down-button";
+  DropdownProps,
+  DropdownItem,
+  DropdownPlacement,
+} from "./components/dropdown";
 
 export {
   Toolbar,
@@ -30,4 +30,4 @@ export type { ToolbarProps, ToolbarButtonProps } from "./components/toolbar";
 export { TextArea } from "./components/text-area";
 export type { TextAreaProps } from "./components/text-area";
 
-export const pieUiVersion = "0.2.1";
+export const pieUiVersion = "0.3.0";

@@ -2,8 +2,8 @@ import Link from "next/link";
 import {
   ButtonPreview,
   CheckboxPreview,
+  DropdownPreview,
   MenuPreview,
-  PullDownPreview,
   StepperPreview,
   TextAreaPreview,
   TogglePreview,
@@ -39,12 +39,12 @@ const groups: ComponentGroup[] = [
         render: <ButtonPreview>Continue</ButtonPreview>,
       },
       {
-        name: "Pull-down button",
-        href: "/components/pull-down-button",
+        name: "Dropdown",
+        href: "/components/dropdown",
         description:
-          "A single trigger that reveals a concise set of context actions.",
-        status: "Planned",
-        render: <PullDownPreview open />,
+          "Compact select-style trigger that opens a list of options.",
+        status: "Stable",
+        render: <DropdownPreview />,
       },
       {
         name: "Toolbar",
@@ -78,7 +78,7 @@ const groups: ComponentGroup[] = [
         href: "/components/checkbox",
         description:
           "Binary selection pattern with indeterminate support for grouped options.",
-        status: "Planned",
+        status: "Stable",
         render: <CheckboxPreview state="checked" label="Email me updates" />,
       },
       {
@@ -92,8 +92,8 @@ const groups: ComponentGroup[] = [
         name: "Stepper",
         href: "/components/stepper",
         description: "Increment and decrement control for bounded values.",
-        status: "Planned",
-        render: <StepperPreview value={2} />,
+        status: "Stable",
+        render: <StepperPreview value={1} />,
       },
       {
         name: "Text area",

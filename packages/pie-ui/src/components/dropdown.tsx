@@ -9,15 +9,14 @@ import {
   useRef,
   useState,
 } from "react";
-import { Button, type ButtonProps } from "./button";
 
-export type PullDownPlacement =
+export type DropdownPlacement =
   | "bottom-start"
   | "bottom-end"
   | "top-start"
   | "top-end";
 
-export interface PullDownItem {
+export interface DropdownItem {
   id?: string;
   label: ReactNode;
   onSelect?: () => void;
@@ -26,20 +25,28 @@ export interface PullDownItem {
   disabled?: boolean;
 }
 
-export interface PullDownButtonProps
-  extends Omit<ButtonProps, "iconAfter" | "children"> {
+export interface DropdownProps {
   label: ReactNode;
-  items: PullDownItem[];
-  placement?: PullDownPlacement;
+  items: DropdownItem[];
+  placement?: DropdownPlacement;
   open?: boolean;
   defaultOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
+  disabled?: boolean;
+  className?: string;
+  "aria-label"?: string;
 }
 
 const ChevronDown = () => (
-  <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true">
+  <svg
+    viewBox="0 0 16 16"
+    width="16"
+    height="16"
+    aria-hidden="true"
+    className="pie-dropdown-chevron"
+  >
     <path
-      d="M3 4.5l3 3 3-3"
+      d="M4 6l4 4 4-4"
       stroke="currentColor"
       strokeWidth="1.5"
       strokeLinecap="round"
@@ -49,8 +56,8 @@ const ChevronDown = () => (
   </svg>
 );
 
-export const PullDownButton = forwardRef<HTMLDivElement, PullDownButtonProps>(
-  function PullDownButton(
+export const Dropdown = forwardRef<HTMLDivElement, DropdownProps>(
+  function Dropdown(
     {
       label,
       items,
@@ -58,10 +65,9 @@ export const PullDownButton = forwardRef<HTMLDivElement, PullDownButtonProps>(
       open: controlledOpen,
       defaultOpen = false,
       onOpenChange,
-      variant = "secondary",
-      size = "md",
-      disabled,
-      ...rest
+      disabled = false,
+      className,
+      "aria-label": ariaLabel,
     },
     ref,
   ) {
@@ -112,35 +118,38 @@ export const PullDownButton = forwardRef<HTMLDivElement, PullDownButtonProps>(
       };
     }, [open, setOpen]);
 
+    const rootClasses = ["pie-dropdown", className].filter(Boolean).join(" ");
+
     return (
-      <div ref={setContainerRef} className="pie-pull-down">
-        <Button
+      <div ref={setContainerRef} className={rootClasses}>
+        <button
           ref={triggerRef}
-          variant={variant}
-          size={size}
+          type="button"
+          className="pie-dropdown-trigger"
+          data-open={open}
           disabled={disabled}
-          aria-haspopup="menu"
+          aria-haspopup="listbox"
           aria-expanded={open}
           aria-controls={panelId}
-          iconAfter={<ChevronDown />}
+          aria-label={ariaLabel}
           onClick={() => setOpen(!open)}
-          {...rest}
         >
-          {label}
-        </Button>
+          <span className="pie-dropdown-label">{label}</span>
+          <ChevronDown />
+        </button>
         {open ? (
           <div
             id={panelId}
-            role="menu"
-            className="pie-pull-down-panel"
+            role="listbox"
+            className="pie-dropdown-panel"
             data-placement={placement}
           >
             {items.map((item, i) => (
               <button
                 key={item.id ?? i}
                 type="button"
-                role="menuitem"
-                className="pie-pull-down-item"
+                role="option"
+                className="pie-dropdown-item"
                 data-variant={item.variant ?? "default"}
                 disabled={item.disabled}
                 onClick={() => {
@@ -149,7 +158,7 @@ export const PullDownButton = forwardRef<HTMLDivElement, PullDownButtonProps>(
                 }}
               >
                 {item.icon ? (
-                  <span className="pie-menu-item-icon" aria-hidden="true">
+                  <span className="pie-dropdown-item-icon" aria-hidden="true">
                     {item.icon}
                   </span>
                 ) : null}

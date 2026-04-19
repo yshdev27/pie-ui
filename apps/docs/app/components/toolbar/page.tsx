@@ -72,7 +72,7 @@ export default function ToolbarDocPage() {
       }}
       related={[
         { label: "Button", href: "/components/button" },
-        { label: "Pull-down button", href: "/components/pull-down-button" },
+        { label: "Dropdown", href: "/components/dropdown" },
         { label: "Menu", href: "/components/menu" },
       ]}
       checklist={[

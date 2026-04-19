@@ -135,8 +135,8 @@ const sidebarGroups = [
       { href: "/components/button", label: "Button", icon: iconFor("action") },
       { href: "/components/menu", label: "Menu", icon: iconFor("menu") },
       {
-        href: "/components/pull-down-button",
-        label: "Pull-down button",
+        href: "/components/dropdown",
+        label: "Dropdown",
         icon: iconFor("pull"),
       },
       {
