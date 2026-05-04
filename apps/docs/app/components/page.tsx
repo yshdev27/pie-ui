@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   ButtonPreview,
   CheckboxPreview,
+  DockPreview,
   DropdownPreview,
   MenuPreview,
   StepperPreview,
@@ -53,6 +54,18 @@ const groups: ComponentGroup[] = [
           "Compact row of grouped controls for contextual editing and navigation.",
         status: "In review",
         render: <ToolbarPreview />,
+      },
+      {
+        name: "Dock",
+        href: "/components/dock",
+        description:
+          "Magnifying icon rail for top-level destinations or persistent app actions.",
+        status: "In review",
+        render: (
+          <div className="scale-[0.78] origin-center">
+            <DockPreview />
+          </div>
+        ),
       },
       {
         name: "Menu",

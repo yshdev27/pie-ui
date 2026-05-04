@@ -10,6 +10,25 @@ type Entry = {
 
 const entries: Entry[] = [
   {
+    version: "v0.4.0",
+    date: "2026-05-04",
+    title: "Dock component",
+    summary:
+      "A magnifying icon rail for top-level destinations, with docs and previews on the site.",
+    changes: [
+      {
+        type: "Added",
+        description:
+          "Dock, DockItem, and DockSeparator — tooltip labels, active state, and configurable magnification.",
+      },
+      {
+        type: "Changed",
+        description:
+          "Docs: new Dock page; components index and sidebar updated. Experimental Scale scaffold was not shipped to npm.",
+      },
+    ],
+  },
+  {
     version: "v0.3.0",
     date: "2026-04-19",
     title: "Checkbox, Stepper, and Dropdown are ready",
@@ -41,7 +60,7 @@ const entries: Entry[] = [
     ],
   },
   {
-    version: "v0.4.0",
+    version: "v0.5.0",
     date: "Planned",
     title: "Coming next",
     summary: "What we're working on for the next release.",

@@ -41,7 +41,7 @@ export default function App() {
 
 ## Components
 
-`Button` · `Toggle` · `Checkbox` · `Stepper` · `Menu` · `Dropdown` · `Toolbar` · `TextArea`
+`Button` · `Toggle` · `Checkbox` · `Stepper` · `Menu` · `Dropdown` · `Toolbar` · `Dock` · `TextArea`
 
 ## Theming
 

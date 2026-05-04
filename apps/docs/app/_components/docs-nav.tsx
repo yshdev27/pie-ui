@@ -16,6 +16,7 @@ function iconFor(
     | "menu"
     | "pull"
     | "toolbar"
+    | "dock"
     | "checkbox"
     | "stepper"
     | "toggle"
@@ -64,6 +65,15 @@ function iconFor(
           <circle cx="9" cy="12" r="1.5" fill="currentColor" />
           <circle cx="12" cy="12" r="1.5" fill="currentColor" />
           <circle cx="15" cy="12" r="1.5" fill="currentColor" />
+        </svg>
+      );
+    case "dock":
+      return (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="9" width="18" height="9" rx="4.5" />
+          <circle cx="8" cy="13.5" r="1.6" fill="currentColor" />
+          <circle cx="12" cy="13.5" r="2.2" fill="currentColor" />
+          <circle cx="16" cy="13.5" r="1.6" fill="currentColor" />
         </svg>
       );
     case "checkbox":
@@ -144,6 +154,7 @@ const sidebarGroups = [
         label: "Toolbar",
         icon: iconFor("toolbar"),
       },
+      { href: "/components/dock", label: "Dock", icon: iconFor("dock") },
     ] as SidebarLink[],
   },
   {

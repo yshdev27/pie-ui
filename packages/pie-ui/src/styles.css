@@ -604,6 +604,145 @@
   background: var(--pie-bg-tertiary);
 }
 
+/* =============================== Dock ================================= */
+
+.pie-dock {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--pie-radius-full);
+  background: var(--pie-bg-primary);
+  border: 1px solid var(--pie-line);
+  box-shadow: var(--pie-shadow-md);
+  font-family: var(--pie-font-sans);
+}
+
+.pie-dock[data-direction="vertical"] {
+  flex-direction: column;
+  padding: 14px 10px;
+  border-radius: var(--pie-radius-xl);
+}
+
+.pie-dock-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: none;
+  background: var(--pie-bg-secondary);
+  border-radius: 999px;
+  color: var(--pie-text-secondary);
+  cursor: pointer;
+  padding: 0;
+  transform: scale(1);
+  transform-origin: bottom center;
+  will-change: transform;
+  transition:
+    background-color var(--pie-motion-fast) var(--pie-ease-default),
+    color var(--pie-motion-fast) var(--pie-ease-default),
+    transform var(--pie-motion-medium) var(--pie-ease-emphasized);
+}
+
+.pie-dock[data-direction="vertical"] .pie-dock-item {
+  transform-origin: center right;
+}
+
+.pie-dock-item:hover,
+.pie-dock-item:focus-visible {
+  background: var(--pie-bg-tertiary);
+  color: var(--pie-text-primary);
+  transform: scale(var(--pie-dock-item-scale, 1.25));
+}
+
+.pie-dock-item:focus-visible {
+  outline: 2px solid var(--pie-focus);
+  outline-offset: 2px;
+}
+
+.pie-dock-item[data-active="true"] {
+  background: var(--pie-text-primary);
+  color: var(--pie-text-on-accent);
+}
+
+.pie-dock-item[data-active="true"]:hover {
+  background: var(--pie-text-primary);
+}
+
+.pie-dock-item-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 55%;
+  height: 55%;
+}
+
+.pie-dock-item-content > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.pie-dock-tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px) scale(0.96);
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: var(--pie-text-primary);
+  color: var(--pie-text-on-accent);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+  transform-origin: bottom center;
+  transition:
+    opacity var(--pie-motion-fast) var(--pie-ease-default),
+    transform var(--pie-motion-medium) var(--pie-ease-emphasized);
+}
+
+.pie-dock-item:hover > .pie-dock-tooltip,
+.pie-dock-item:focus-visible > .pie-dock-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(calc(1 / var(--pie-dock-item-scale, 1.25)));
+}
+
+.pie-dock[data-direction="vertical"] .pie-dock-tooltip {
+  bottom: auto;
+  left: auto;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(4px) scale(0.96);
+  transform-origin: center right;
+}
+
+.pie-dock[data-direction="vertical"] .pie-dock-item:hover > .pie-dock-tooltip,
+.pie-dock[data-direction="vertical"]
+  .pie-dock-item:focus-visible
+  > .pie-dock-tooltip {
+  transform: translateY(-50%) translateX(0)
+    scale(calc(1 / var(--pie-dock-item-scale, 1.25)));
+}
+
+.pie-dock-separator {
+  flex-shrink: 0;
+  width: 1px;
+  height: 24px;
+  background: var(--pie-line);
+  margin: 0 4px;
+}
+
+.pie-dock[data-direction="vertical"] .pie-dock-separator {
+  width: 24px;
+  height: 1px;
+  margin: 4px 0;
+}
+
 /* ============================== Text area ============================= */
 
 .pie-textarea {

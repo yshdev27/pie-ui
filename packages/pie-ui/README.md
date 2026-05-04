@@ -34,7 +34,7 @@ export default function App() {
 
 ## Components
 
-`Button`, `Toggle`, `Checkbox`, `Stepper`, `Menu` (+ `MenuItem`, `MenuSeparator`), `Dropdown`, `Toolbar` (+ `ToolbarButton`, `ToolbarSeparator`), `TextArea`.
+`Button`, `Toggle`, `Checkbox`, `Stepper`, `Menu` (+ `MenuItem`, `MenuSeparator`), `Dropdown`, `Toolbar` (+ `ToolbarButton`, `ToolbarSeparator`), `Dock` (+ `DockItem`, `DockSeparator`), `TextArea`.
 
 ## Theming
 
