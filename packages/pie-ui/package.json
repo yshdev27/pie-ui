@@ -38,7 +38,7 @@
     "react-dom": ">=18"
   },
   "dependencies": {
-    "@pieui/tokens": "^0.2.0"
+    "@pieui/tokens": "^0.2.2"
   },
   "devDependencies": {
     "@types/react": "^19.1.2",

@@ -1,6 +1,6 @@
 {
   "name": "@pieui/tokens",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Design tokens and theme.css for Pie UI \u2014 CSS custom properties and a typed token object.",
   "keywords": [
     "design-tokens",

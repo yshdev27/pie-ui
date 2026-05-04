@@ -26,6 +26,10 @@ const entries: Entry[] = [
         description:
           "Docs: new Dock page; components index and sidebar updated. Experimental Scale scaffold was not shipped to npm.",
       },
+      {
+        type: "Changed",
+        description: "@pieui/tokens bumped to v0.2.2 and published alongside this release.",
+      },
     ],
   },
   {
