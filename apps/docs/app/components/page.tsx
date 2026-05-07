@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PIE_UI_VERSION_ABBREV } from "../../lib/pie-ui-version";
 import {
   ButtonPreview,
   CheckboxPreview,
@@ -178,7 +179,9 @@ export default function ComponentsPage() {
       <section className="section">
         <div className="section-heading">
           <h2>More on the way</h2>
-          <p>These components are planned for v0.4 and beyond.</p>
+          <p>
+            These components are planned for {PIE_UI_VERSION_ABBREV} and beyond.
+          </p>
         </div>
         <div className="card-grid">
           {[

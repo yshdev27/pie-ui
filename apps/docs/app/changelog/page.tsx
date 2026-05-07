@@ -1,3 +1,5 @@
+import { PIE_UI_VERSION_TAG } from "../../lib/pie-ui-version";
+
 type ChangeType = "Added" | "Changed" | "Fixed" | "Planned";
 
 type Entry = {
@@ -10,7 +12,7 @@ type Entry = {
 
 const entries: Entry[] = [
   {
-    version: "v0.4.0",
+    version: PIE_UI_VERSION_TAG,
     date: "2026-05-04",
     title: "Dock component",
     summary:

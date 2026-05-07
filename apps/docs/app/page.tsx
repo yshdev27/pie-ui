@@ -1,4 +1,8 @@
 import Link from "next/link";
+import {
+  PIE_UI_VERSION_ABBREV,
+  PIE_UI_VERSION_TAG,
+} from "../lib/pie-ui-version";
 import { InstallSnippet } from "./_components/install-snippet";
 import {
   ButtonPreview,
@@ -93,7 +97,7 @@ export default function HomePage() {
   return (
     <section className="doc-page">
       <section className="hero">
-        <p className="eyebrow">Pie UI · v0.4</p>
+        <p className="eyebrow">Pie UI · {PIE_UI_VERSION_ABBREV}</p>
         <h1>Design for calm, clarity, and craft.</h1>
         <p className="lead">
           Pie UI is an expressive, accessible React component library powered by
@@ -116,7 +120,7 @@ export default function HomePage() {
 
         <div className="pill-row">
           <span className="pill">
-            <span className="dot" /> v0.4.0
+            <span className="dot" /> {PIE_UI_VERSION_TAG}
           </span>
           <span className="pill">React 19</span>
           <span className="pill">TypeScript first</span>
@@ -143,7 +147,9 @@ export default function HomePage() {
       <section className="section">
         <div className="section-heading">
           <h2>Built to compose</h2>
-          <p>Preview a few of the components shipping in v0.4.</p>
+          <p>
+            Preview a few of the components shipping in {PIE_UI_VERSION_ABBREV}.
+          </p>
         </div>
         <div className="showcase">
           {showcase.map((s) => (

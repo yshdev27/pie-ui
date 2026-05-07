@@ -95,13 +95,15 @@ a {
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.03em;
-  color: #00b8d9;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  color: var(--pie-text-primary);
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
 }
 
 .brand:hover {
   transform: translateY(-1px);
-  filter: saturate(1.15);
+  color: var(--pie-text-secondary);
 }
 
 .topnav {
